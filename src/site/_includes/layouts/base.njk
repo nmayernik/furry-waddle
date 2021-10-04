@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{ site.opengraph.twitter.username }}" />
+    <meta name="twitter:creator" content="{{ site.opengraph.twitter.username }}" />
+    <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="twitter:description" content="{%- if description -%}{{ description }}{%- else -%}{{ site.description }}{%- endif -%}" />
+    <meta name="twitter:image" content="{% if card %}https://seanherron.com/assets/{{ card }}{% else %}{{ site.opengraph.twitter.card_url }}{% endif %}" />
+    <meta name="twitter:image:alt" content="{% if card_alt %}{{ card_alt }}{% else %}{{ site.opengraph.twitter.card_alt }}{% endif %}" />
+    <meta property="og:url" content="https://seanherron.com{{ page.url }}" />
+    <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:description" content="{%- if description -%}{{ description }}{%- else -%}{{ site.description }}{%- endif -%}" />
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>{{ title }} | {{ site.title }}</title>
+  </head>
+  <body>
+  <header>
+      <a class="/">{{ site.title }}</a>
+  </header>
+
+  <div class="container">
+    {{ content | safe }}
+  </div>
+
+  <footer>
+    &copy;
+  </footer>
+
+   <div class="hidden bg-green-500 absolute bottom-0"><span class="sm:hidden md:hidden lg:hidden xl:hidden 2xl:hidden">None</span> <span class="hidden sm:inline md:hidden lg:hidden xl:hidden 2xl:hidden">Small</span> <span class="hidden sm:hidden md:inline lg:hidden xl:hidden 2xl:hidden">Medium</span> <span class="hidden sm:hidden md:hidden lg:inline xl:hidden 2xl:hidden">Large</span> <span class="hidden sm:hidden md:hidden lg:hidden xl:inline 2xl:hidden">XL</span> <span class="hidden sm:hidden md:hidden lg:hidden xl:hidden 2xl:inline">2XL</span></div>
+  </body>
+</html>
